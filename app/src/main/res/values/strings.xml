@@ -4,5 +4,7 @@
     <string name="app_name">RobolectricSample</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="click_me">Click Me</string>
+    <string name="ok_thanks">OK Thanks!</string>
 
 </resources>
