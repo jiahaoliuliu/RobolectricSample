@@ -17,7 +17,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 @RunWith(RobolectricGradleTestRunner.class)
-@Config(emulateSdk = 18, reportSdk = 18)
 public class MyActivityTest {
 
   private MainActivity mActivity;
@@ -39,7 +38,10 @@ public class MyActivityTest {
     assertThat(mActivity.my_hello_text_view).hasText(R.string.hello_world);
     mActivity.mClickMeBtn.performClick();
     assertThat(mActivity.my_hello_text_view).hasText(R.string.ok_thanks);
+  }
 
+  @Test
+  public void testMockitoIntegration() {
       //Testing mockito
       List mockedList = mock(List.class);
 
@@ -50,6 +52,5 @@ public class MyActivityTest {
       // Verification
       verify(mockedList).add("one");
       verify(mockedList).clear();
-
   }
 }
