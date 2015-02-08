@@ -1,4 +1,4 @@
-package com.soagrowers.android;
+package com.jiahaoliuliu.robolectricsample;
 
 import org.junit.runners.model.InitializationError;
 import org.robolectric.AndroidManifest;
@@ -25,7 +25,7 @@ public class RobolectricGradleTestRunner extends RobolectricTestRunner {
                 Fs.fileFromPath(assetsDir));
 
         // If you change the package - don't forget to change the build.gradle and the AndroidManifest.xml
-        manifest.setPackageName("com.soagrowers.android");
+        manifest.setPackageName("com.jiahaoliuliu.robolectricsample");
         // Robolectric is already going to look in the  'app' dir ...
         // so no need to add to package name
         return manifest;

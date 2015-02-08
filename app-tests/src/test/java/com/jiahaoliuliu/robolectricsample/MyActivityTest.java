@@ -1,7 +1,5 @@
 package com.jiahaoliuliu.robolectricsample;
 
-import android.test.UiThreadTest;
-
 import com.jiahaoliuliu.robolectricsample.MainActivity;
 import com.jiahaoliuliu.robolectricsample.RobolectricGradleTestRunner;
 
