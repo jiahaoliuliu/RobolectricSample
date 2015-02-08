@@ -10,7 +10,11 @@ import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
+import java.util.List;
+
 import static org.assertj.android.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 @RunWith(RobolectricGradleTestRunner.class)
 @Config(emulateSdk = 18, reportSdk = 18)
@@ -35,5 +39,17 @@ public class MyActivityTest {
     assertThat(mActivity.my_hello_text_view).hasText(R.string.hello_world);
     mActivity.mClickMeBtn.performClick();
     assertThat(mActivity.my_hello_text_view).hasText(R.string.ok_thanks);
+
+      //Testing mockito
+      List mockedList = mock(List.class);
+
+      // Using mock object
+      mockedList.add("one");
+      mockedList.clear();
+
+      // Verification
+      verify(mockedList).add("one");
+      verify(mockedList).clear();
+
   }
 }
