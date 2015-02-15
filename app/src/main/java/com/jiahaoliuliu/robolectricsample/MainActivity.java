@@ -17,6 +17,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        System.out.println("Calling static method on AppUtils " + new AppUtils().getNumberUsersRandomly());
         setContentView(R.layout.activity_main);
         my_hello_text_view = (TextView) findViewById(R.id.my_hello_text_view);
         mClickMeBtn = (Button) findViewById(R.id.clickMeBtn);
