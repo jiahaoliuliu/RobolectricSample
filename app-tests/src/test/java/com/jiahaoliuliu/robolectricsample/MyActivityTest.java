@@ -12,7 +12,7 @@ import java.util.jar.Manifest;
 import static org.assertj.android.api.Assertions.assertThat;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(emulateSdk = 18, manifest = "../app/src/main/AndroidManifest.xml", shadows = {AppUtilsShadow.class})
+@Config(emulateSdk = 18, manifest = "../app/src/main/AndroidManifest.xml", shadows = {AppUtilsShadow.class, MyShadowBitmap.class})
 public class MyActivityTest {
 
   private MainActivity mActivity;

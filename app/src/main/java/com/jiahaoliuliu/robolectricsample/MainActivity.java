@@ -1,5 +1,7 @@
 package com.jiahaoliuliu.robolectricsample;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,12 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.io.OutputStream;
+
 
 public class MainActivity extends ActionBarActivity {
 
     TextView my_hello_text_view;
     Button mClickMeBtn;
-
+   
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +27,16 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         my_hello_text_view = (TextView) findViewById(R.id.my_hello_text_view);
         mClickMeBtn = (Button) findViewById(R.id.clickMeBtn);
+
+        int w = 200, h = 200;
+        Bitmap.Config conf = Bitmap.Config.ARGB_8888; // see other conf types
+        Bitmap bmp = Bitmap.createBitmap(w, h, conf); // this creates a MUTABLE bitmap
+        bmp.compress(Bitmap.CompressFormat.PNG, 200, new OutputStream() {
+            @Override
+            public void write(int oneByte) throws IOException {
+                System.out.println("Writting in the outputStream " + oneByte);
+            }
+        });
     }
 
     public void clickMeBtnPressed(View view) {
