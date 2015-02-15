@@ -17,6 +17,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppUtils appUtils = new AppUtils();
+        System.out.println("The randomly generated number of users is " + appUtils.generateNumberUsersRandomly());
         setContentView(R.layout.activity_main);
         my_hello_text_view = (TextView) findViewById(R.id.my_hello_text_view);
         mClickMeBtn = (Button) findViewById(R.id.clickMeBtn);

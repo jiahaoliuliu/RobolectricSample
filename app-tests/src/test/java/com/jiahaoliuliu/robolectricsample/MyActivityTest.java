@@ -17,6 +17,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 @RunWith(RobolectricGradleTestRunner.class)
+@Config(shadows = {AppUtilsShadow.class})
 public class MyActivityTest {
 
   private MainActivity mActivity;
