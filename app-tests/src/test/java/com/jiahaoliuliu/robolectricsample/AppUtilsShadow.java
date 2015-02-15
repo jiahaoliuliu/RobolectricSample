@@ -2,7 +2,6 @@ package com.jiahaoliuliu.robolectricsample;
 
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
-import org.robolectric.shadows.ShadowView;
 
 /**
  * Created by jiahao on 2/15/15.
