@@ -23,10 +23,5 @@ public class MyShadowBitmap extends ShadowBitmap {
         bitmapQuality = quality;
         System.out.println("Using the shadow to compress");
         return true;
-//        return realBitmap.compress(format, quality, stream);
-    }
-
-    public int getQuality() {
-        return bitmapQuality;
     }
 }

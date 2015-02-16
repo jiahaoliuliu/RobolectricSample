@@ -22,36 +22,12 @@ public class MyActivityTest {
 
   private MainActivity mActivity;
 
-  @Before
-  public void setup() {
-    mActivity = Robolectric.buildActivity(MainActivity.class).create().get();
-  }
-
   @Test
+  @Config(shadows = AppUtilsShadow.class)
   public void testMyActivityAppearsAsExpectedInitially() {
+      mActivity = Robolectric.buildActivity(MainActivity.class).create().get();
     assertThat(mActivity.my_hello_text_view).isVisible();
     assertThat(mActivity.my_hello_text_view).hasText("Hello world!");
     assertThat(mActivity.mClickMeBtn).hasText("Click Me");
-  }
-
-  @Test
-  public void testClickingClickMeButtonChangesHelloWorldText() {
-    assertThat(mActivity.my_hello_text_view).hasText(R.string.hello_world);
-    mActivity.mClickMeBtn.performClick();
-    assertThat(mActivity.my_hello_text_view).hasText(R.string.ok_thanks);
-  }
-
-  @Test
-  public void testMockitoIntegration() {
-      //Testing mockito
-      List mockedList = mock(List.class);
-
-      // Using mock object
-      mockedList.add("one");
-      mockedList.clear();
-
-      // Verification
-      verify(mockedList).add("one");
-      verify(mockedList).clear();
   }
 }
