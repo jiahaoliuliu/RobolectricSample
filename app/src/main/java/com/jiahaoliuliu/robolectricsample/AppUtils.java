@@ -5,6 +5,8 @@ package com.jiahaoliuliu.robolectricsample;
  */
 public class AppUtils {
     
+    public AppUtils() {}
+    
     public int generateNumberUsersRandomly() {
         // :)
         return 42;
