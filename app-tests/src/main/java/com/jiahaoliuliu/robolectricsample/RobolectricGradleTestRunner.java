@@ -4,9 +4,20 @@ import org.junit.runners.model.InitializationError;
 import org.robolectric.AndroidManifest;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
+import org.robolectric.bytecode.ClassInfo;
+import org.robolectric.bytecode.Setup;
 import org.robolectric.res.Fs;
 
 public class RobolectricGradleTestRunner extends RobolectricTestRunner {
+
+    /**
+     * The list of the customized shadows classes name.
+     * Note they should be full qualified.
+     */
+    private static final String[] CUSTOMIZED_SHADOWS_NAME = {
+            "com.jiahaoliuliu.robolectricsample.AppUtils"
+    };
+
     private static final int MAX_SDK_SUPPORTED_BY_ROBOLECTRIC = 18;
 
     // Since the Android manifest is in another module, System.getProperty
@@ -38,5 +49,20 @@ public class RobolectricGradleTestRunner extends RobolectricTestRunner {
         };
 
         return manifest;
+    }
+
+    @Override
+    public Setup createSetup() {
+        return new Setup() {
+            @Override
+            public boolean shouldInstrument(ClassInfo classInfo) {
+                for (String customizedShadowsName : CUSTOMIZED_SHADOWS_NAME) {
+                    if (classInfo.getName().equalsIgnoreCase(customizedShadowsName)) {
+                        return true;
+                    }
+                }
+                return super.shouldInstrument(classInfo);
+            };
+        };
     }
 }
