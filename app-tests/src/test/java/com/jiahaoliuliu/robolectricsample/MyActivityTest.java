@@ -23,7 +23,6 @@ public class MyActivityTest {
   private MainActivity mActivity;
 
   @Test
-  @Config(shadows = AppUtilsShadow.class)
   public void testMyActivityAppearsAsExpectedInitially() {
       mActivity = Robolectric.buildActivity(MainActivity.class).create().get();
     assertThat(mActivity.my_hello_text_view).isVisible();
