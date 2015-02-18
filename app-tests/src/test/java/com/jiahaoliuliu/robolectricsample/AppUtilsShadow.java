@@ -9,10 +9,6 @@ import org.robolectric.annotation.Implements;
 @Implements(AppUtils.class)
 public class AppUtilsShadow {
 
-    public void __constructor__() {
-        System.out.println("The constructor of the app utils shadow is invoked");
-    }
-    
     @Implementation
     public int getNumberUsersRandomly() {
         // Shadowed result

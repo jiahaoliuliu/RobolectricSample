@@ -11,8 +11,8 @@ import java.util.jar.Manifest;
 
 import static org.assertj.android.api.Assertions.assertThat;
 
-@RunWith(RobolectricTestRunner.class)
-@Config(emulateSdk = 18, manifest = "../app/src/main/AndroidManifest.xml", shadows = {AppUtilsShadow.class, MyShadowBitmap.class})
+@RunWith(RobolectricGradleTestRunner.class)
+@Config(shadows = {AppUtilsShadow.class, MyShadowBitmap.class})
 public class MyActivityTest {
 
   private MainActivity mActivity;
@@ -24,12 +24,6 @@ public class MyActivityTest {
 
   @Test
   public void testMyActivityAppearsAsExpectedInitially() {
-//      AppUtils appUtils = new AppUtils();
-//      System.out.println("Random user number is " + appUtils.getNumberUsersRandomly());
-
-      AppUtilsShadow appUtilsShadow = new AppUtilsShadow();
-      System.out.println("Calling the shadow object " + appUtilsShadow.getNumberUsersRandomly());
-      
       assertThat(mActivity.my_hello_text_view).isVisible();
       assertThat(mActivity.my_hello_text_view).hasText("Hello world!");
       assertThat(mActivity.mClickMeBtn).hasText("Click Me");
