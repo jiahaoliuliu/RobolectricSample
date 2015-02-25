@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="click_me">Click Me</string>
     <string name="ok_thanks">OK Thanks!</string>
+    <string name="title_activity_staggered_grid_view">StaggeredGridViewActivity</string>
 
 </resources>

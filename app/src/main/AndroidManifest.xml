@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".StaggeredGridViewActivity"
+            android:label="@string/title_activity_staggered_grid_view" >
+        </activity>
     </application>
 
 </manifest>
