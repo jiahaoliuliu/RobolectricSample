@@ -50,7 +50,7 @@
     <orderEntry type="module" module-name="app" exported="" />
     <orderEntry type="library" exported="" scope="TEST" name="mockito-core-1.10.19" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="objenesis-2.1" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="_Users_jiahao_project_github_RobolectricSample_app_build_intermediates_exploded_aar_com_etsy_android_grid_library_1_0_5_classes_jar" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="classes" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="classes" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="support-annotations-21.0.3" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="assertj-core-1.6.1" level="project" />
